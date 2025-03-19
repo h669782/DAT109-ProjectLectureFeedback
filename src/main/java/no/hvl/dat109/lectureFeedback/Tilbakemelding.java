@@ -2,24 +2,24 @@ package no.hvl.dat109.lectureFeedback;
 
 public class Tilbakemelding {
 	
-	private int id;
+	private Long id;
 	private Farge farge;
 	private Forelesning forelesningsID;
 	
 	public Tilbakemelding() {
 	}
 
-	public Tilbakemelding(int id, Farge farge, Forelesning forelesningsID) {
+	public Tilbakemelding(Long id, Farge farge, Forelesning forelesningsID) {
 		this.setId(id);
 		this.setFarge(farge);
 		this.setForelesningsID(forelesningsID);
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -1,62 +1,49 @@
 package no.hvl.dat109.lectureFeedback;
 
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
 public class Forelesning {
-	
-	private int id;
-	private String navn;
-	private String tidspunkt;
-	private String sted;
-	private Admin adminID;
-	
-	public Forelesning() {
-	}
-	
-	public Forelesning(int id, String navn, String tidspunkt, String sted, Admin adminID) {
-		this.setId(id);
-		this.setNavn(navn);
-		this.setTidspunkt(tidspunkt);
-		this.setSted(sted);
-		this.setAdminID(adminID);
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public int getId() {
-		return id;
-	}
+    private String navn;
+    private String sted;
+    private String tidspunkt;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @ManyToOne
+    @JoinColumn(name = "admin_id", nullable = false)  
+    private Admin admin; 
 
-	public String getNavn() {
-		return navn;
-	}
+    @OneToMany(mappedBy = "forelesning", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Registrering> registreringer;
 
-	public void setNavn(String navn) {
-		this.navn = navn;
-	}
+    public Forelesning() {
+    }
 
-	public String getTidspunkt() {
-		return tidspunkt;
-	}
+    public Forelesning(Long id, String navn, String tidspunkt, String sted, Admin admin) { 
+        this.setId(id);
+        this.setNavn(navn);
+        this.setTidspunkt(tidspunkt);
+        this.setSted(sted);
+        this.setAdmin(admin); 
+    }
 
-	public void setTidspunkt(String tidspunkt) {
-		this.tidspunkt = tidspunkt;
-	}
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-	public String getSted() {
-		return sted;
-	}
+    public String getNavn() { return navn; }
+    public void setNavn(String navn) { this.navn = navn; }
 
-	public void setSted(String sted) {
-		this.sted = sted;
-	}
+    public String getTidspunkt() { return tidspunkt; }
+    public void setTidspunkt(String tidspunkt) { this.tidspunkt = tidspunkt; }
 
-	public Admin getAdminID() {
-		return adminID;
-	}
+    public String getSted() { return sted; }
+    public void setSted(String sted) { this.sted = sted; }
 
-	public void setAdminID(Admin adminID) {
-		this.adminID = adminID;
-	}
-
+    public Admin getAdmin() { return admin; }
+    public void setAdmin(Admin admin) { this.admin = admin; } 
 }
+

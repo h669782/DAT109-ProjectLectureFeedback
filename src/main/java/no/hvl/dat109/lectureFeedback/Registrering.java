@@ -1,42 +1,51 @@
 package no.hvl.dat109.lectureFeedback;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Registrering {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private int id;
-	private Student studentID;
-	private Forelesning forelesningsID;
-	
-	public Registrering(){
-	}
-	
-	public Registrering(int id, Student studentID, Forelesning forelesningsID) {
-		this.setId(id);
-		this.setStudentID(studentID);
-		this.setForelesningsID(forelesningsID);
-	}
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student; 
 
-	public int getId() {
-		return id;
-	}
+    @ManyToOne
+    @JoinColumn(name = "forelesning_id", nullable = false)
+    private Forelesning forelesning; 
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Registrering() {
+    }
 
-	public Student getStudentID() {
-		return studentID;
-	}
+    public Registrering(Long id, Student student, Forelesning forelesning) { 
+        this.setId(id);
+        this.setStudent(student);
+        this.setForelesning(forelesning);
+    }
 
-	public void setStudentID(Student studentID) {
-		this.studentID = studentID;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Forelesning getForelesningsID() {
-		return forelesningsID;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setForelesningsID(Forelesning forelesningsID) {
-		this.forelesningsID = forelesningsID;
-	}
-	
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Forelesning getForelesning() { 
+        return forelesning;
+    }
+
+    public void setForelesning(Forelesning forelesning) { 
+        this.forelesning = forelesning;
+    }
 }
