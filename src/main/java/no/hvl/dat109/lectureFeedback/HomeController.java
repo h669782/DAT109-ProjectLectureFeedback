@@ -8,7 +8,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String visStartside() {
-        return "jsp/start"; 
+        return "start"; 
     }
 }
 

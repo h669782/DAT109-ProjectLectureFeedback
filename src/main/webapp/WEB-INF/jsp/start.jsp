@@ -5,7 +5,6 @@
     <title>Velkommen</title>
 </head>
 <body>
-    <h1>🚀 Velkommen til Lecture Feedback System!</h1>
-    <p>Hvis du ser denne siden, fungerer alt. 😄</p>
+    <h1>Velkommen til Lecture Feedback</h1>
 </body>
 </html>
