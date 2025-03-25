@@ -24,26 +24,51 @@ public class Forelesning {
     }
 
     public Forelesning(Long id, String navn, String tidspunkt, String sted, Admin admin) { 
-        this.setId(id);
-        this.setNavn(navn);
-        this.setTidspunkt(tidspunkt);
-        this.setSted(sted);
-        this.setAdmin(admin); 
+        this.id = id;
+        this.navn = navn;
+        this.tidspunkt = tidspunkt;
+        this.sted = sted;
+        this.admin = admin; 
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() { 
+    	return id;
+    }
+    
+    public void setId(Long id) { 
+    	this.id = id;
+    }
 
-    public String getNavn() { return navn; }
-    public void setNavn(String navn) { this.navn = navn; }
+    public String getNavn() {
+    	return navn;
+    }
+    
+    public void setNavn(String navn) { 
+    	this.navn = navn;
+    }
 
-    public String getTidspunkt() { return tidspunkt; }
-    public void setTidspunkt(String tidspunkt) { this.tidspunkt = tidspunkt; }
+    public String getTidspunkt() { 
+    	return tidspunkt; 
+    }
+    
+    public void setTidspunkt(String tidspunkt) {
+    	this.tidspunkt = tidspunkt;
+    } 
 
-    public String getSted() { return sted; }
-    public void setSted(String sted) { this.sted = sted; }
+    public String getSted() { 
+    	return sted; 
+    }
+    
+    public void setSted(String sted) {
+    	this.sted = sted;
+    }
 
-    public Admin getAdmin() { return admin; }
-    public void setAdmin(Admin admin) { this.admin = admin; } 
+    public Admin getAdmin() { 
+    	return admin;
+    }
+    
+    public void setAdmin(Admin admin) {
+    	this.admin = admin; 
+    } 
 }
 

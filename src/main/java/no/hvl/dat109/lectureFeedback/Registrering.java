@@ -20,9 +20,9 @@ public class Registrering {
     }
 
     public Registrering(Long id, Student student, Forelesning forelesning) { 
-        this.setId(id);
-        this.setStudent(student);
-        this.setForelesning(forelesning);
+        this.id = id;
+        this.student = student;
+        this.forelesning = forelesning;
     }
 
     public Long getId() {

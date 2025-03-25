@@ -2,6 +2,7 @@ package no.hvl.dat109.lectureFeedback;
 
 import java.util.List;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,8 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String navn;
+	private String studnr;
+	@Embedded
 	private Passord passord;
 	
     @OneToMany(mappedBy = "student")
@@ -23,10 +25,10 @@ public class Student {
 	public Student() {	
 	}
 	
-	public Student(Long id, String navn, Passord passord) {
-		this.setId(id);
-		this.setNavn(navn);
-		this.setPassord(passord);
+	public Student(Long id, String studnr, Passord passord) {
+		this.id = id;
+		this.studnr = studnr;
+		this.passord = passord;
 	}
 
 	public Long getId() {
@@ -37,12 +39,12 @@ public class Student {
 		this.id = id;
 	}
 
-	public String getNavn() {
-		return navn;
+	public String getStudnr() {
+		return studnr;
 	}
 
-	public void setNavn(String navn) {
-		this.navn = navn;
+	public void setStudnr(String studnr) {
+		this.studnr = studnr;
 	}
 
 	public Passord getPassord() {
