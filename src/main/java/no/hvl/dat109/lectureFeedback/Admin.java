@@ -14,6 +14,9 @@ public class Admin {
 
     @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Forelesning> opprettedeForelesninger; 
+    
+    public Admin() {
+    }
 	
 	public Admin(Long id, String navn, String passord) {
 		this.setId(id);

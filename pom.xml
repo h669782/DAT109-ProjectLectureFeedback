@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>3.4.4</version>
 	</parent>
 	<groupId>no.hvl.dat109</groupId>
 	<artifactId>lectureFeedback</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>lectureFeedback</name>
 	<description>Prosjekt i dat109</description>
 	<url/>
@@ -54,6 +54,11 @@
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
         </dependency>
+        <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+    <scope>provided</scope>
+		</dependency>
 
         <!-- Test Dependencies -->
         <dependency>
@@ -78,7 +83,11 @@
   </dependencies>
 
 	<build>
-		<plugins>
+    	<plugins>
+       		<plugin>
+           	 <groupId>org.apache.maven.plugins</groupId>
+           	 <artifactId>maven-war-plugin</artifactId>
+        	</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
