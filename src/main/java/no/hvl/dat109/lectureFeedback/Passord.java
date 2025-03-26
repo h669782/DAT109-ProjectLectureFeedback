@@ -1,6 +1,6 @@
 package no.hvl.dat109.lectureFeedback;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Passord {
